@@ -1,10 +1,10 @@
 # 问卷星自动填写助手 (WJX Auto Fill)
 
-一个 Tampermonkey 用户脚本，用于自动填写并提交问卷星（wjx.cn）问卷。支持自定义提交次数、单选题选项权重分配，以及自动处理常见弹窗和人机验证。
+一个 Tampermonkey / 脚本猫 用户脚本，用于自动填写并提交问卷星（wjx.cn）问卷。支持自定义提交次数、单选题选项权重分配，以及自动处理常见弹窗和人机验证。
 
 ## 背景
 
-本项目代码由 **DeepSeek** 辅助生成。由于 DeepSeek 是纯文本模型，**无法看到图片**（是个"瞎子"），所以在人机验证环节只能通过自动点击按钮来尝试通过——对于简单的点击式验证尚可应付，但遇到需要**识别图片内容**的图形验证码（如滑块拼图、文字点选等）时就无能为力了。
+本项目代码由 **DeepSeek** 辅助生成。由于 DeepSeek 是纯文本模型，**无法看到图片**（是个"瞎子"），无法生成自动人机验证模块，所以在人机验证环节只能通过人工点击按钮来尝试通过。
 
 因此：
 
@@ -18,25 +18,26 @@
 - **批量提交**：可设置提交份数（1–9999），自动循环填写并提交
 - **权重控制**：为每道单选题的各个选项设置出现次数比例（如 1:1:1:1 = 各25%）
 - **弹窗处理**：自动关闭"继续上次回答"提示弹窗、安全校验弹窗
-- **简单验证码**：自动点击阿里云智能验证按钮（点击式）
 - **进度持久化**：刷新/关闭页面后自动恢复，不丢进度
 - **可拖拽面板**：控制面板可自由拖拽，不影响浏览问卷
 
 ## 安装
 
-### 1. 安装 Tampermonkey 浏览器扩展
+### 1. 安装 Tampermonkey / 脚本猫 浏览器扩展
 
-| 浏览器 | 安装地址 |
-|--------|---------|
-| Chrome / Edge | [Tampermonkey - Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) |
-| Firefox | [Tampermonkey - Firefox Add-ons](https://addons.mozilla.org/firefox/addon/tampermonkey/) |
-| Safari | [Tampermonkey - Mac App Store](https://apps.apple.com/app/tampermonkey/id1482490089) |
+| 浏览器 | 扩展 | 安装地址 |
+|--------|------|---------|
+| Chrome / Edge | Tampermonkey | [Tampermonkey - Chrome Web Store](https://chromewebstore.google.com/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo) |
+| Chrome / Edge | 脚本猫 | [脚本猫 - Chrome Web Store](https://chromewebstore.google.com/detail/scriptcat/ndcooeababalnlpkfedmmbbbgkljhpjf) |
+| Firefox | Tampermonkey | [Tampermonkey - Firefox Add-ons](https://addons.mozilla.org/firefox/addon/tampermonkey/) |
+| Firefox | 脚本猫 | [脚本猫 - Firefox Add-ons](https://addons.mozilla.org/firefox/addon/scriptcat/) |
+| Safari | Tampermonkey | [Tampermonkey - Mac App Store](https://apps.apple.com/app/tampermonkey/id1482490089) |
 
 ### 2. 安装脚本
 
 **方法一：一键安装（推荐）**
 
-1. 点击 Tampermonkey 图标 → **管理面板** → **实用工具**
+1. 点击 Tampermonkey / 脚本猫 图标 → **管理面板** → **实用工具**
 2. 在「从 URL 安装」输入框中粘贴以下地址，点击「安装」：
 
 ```
@@ -45,7 +46,7 @@ https://raw.githubusercontent.com/BinaryBardY/wjx/main/wjx-auto-fill.user.js
 
 **方法二：手动安装**
 
-1. 点击 Tampermonkey 图标 → **创建新脚本**
+1. 点击 Tampermonkey / 脚本猫 图标 → **创建新脚本**
 2. 清空编辑器，将 `wjx-auto-fill.user.js` 的全部内容粘贴进去
 3. `Ctrl + S` 保存
 
